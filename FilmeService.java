@@ -50,7 +50,7 @@ public class FilmeService {
     return false;
     }
 
-    // 🔥 NOVO: retornar lista (necessário pra interface)
+    // retornar lista (necessário pra interface)
     public ArrayList<Filme> getFilmes() {
         return filmes;
     }
