@@ -41,12 +41,13 @@ public class FilmeService {
         }
     }
 
-    // Remover filme
-    public void removerFilme(int id) {
+    public boolean removerFilme(int id) {
         Filme f = buscarPorId(id);
         if (f != null) {
             filmes.remove(f);
-        }
+            return true;
+    }
+    return false;
     }
 
     // 🔥 NOVO: retornar lista (necessário pra interface)

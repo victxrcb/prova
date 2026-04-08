@@ -66,7 +66,7 @@ public class TelaFilmes extends JFrame {
                 campoNome.setText("");
                 campoGenero.setText("");
 
-                atualizarLista();
+              
             } else {
                 JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
             }
@@ -108,9 +108,13 @@ public class TelaFilmes extends JFrame {
             try {
                 int id = Integer.parseInt(campoId.getText());
 
-                service.removerFilme(id);
+                boolean removido = service.removerFilme(id);
 
-                JOptionPane.showMessageDialog(null, "Filme removido!");
+                    if (removido) {
+                        JOptionPane.showMessageDialog(null, "Filme removido com sucesso!");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Filme não encontrado!");
+                    }
 
                 atualizarLista();
             } catch (Exception ex) {
